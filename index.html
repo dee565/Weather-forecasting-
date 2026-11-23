@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecasting System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <p class="eyebrow">WEATHER DASHBOARD</p>
+            <h1>Weather Forecasting System</h1>
+            <p class="subtitle">Check current weather conditions for any city.</p>
+        </header>
+
+        <form method="POST" class="search-form">
+            <label for="city">Enter city name</label>
+            <div class="search-row">
+                <input id="city" name="city" type="text" placeholder="e.g. Chennai"
+                       value="{{ city }}" required>
+                <button type="submit">Search</button>
+            </div>
+        </form>
+
+        {% if error %}
+            <div class="message error">{{ error }}</div>
+        {% endif %}
+
+        {% if weather %}
+        <section class="weather-card" aria-live="polite">
+            <div class="location">
+                <h2>{{ weather.city }}, {{ weather.country }}</h2>
+                <p>{{ weather.description }}</p>
+            </div>
+            <div class="temperature">
+                <img src="https://openweathermap.org/img/wn/{{ weather.icon }}@2x.png"
+                     alt="Weather icon">
+                <strong>{{ weather.temperature }}°C</strong>
+            </div>
+            <p class="feels">Feels like {{ weather.feels_like }}°C</p>
+            <div class="details">
+                <div class="detail">
+                    <span>Humidity</span>
+                    <strong>{{ weather.humidity }}%</strong>
+                </div>
+                <div class="detail">
+                    <span>Wind speed</span>
+                    <strong>{{ weather.wind }} m/s</strong>
+                </div>
+            </div>
+        </section>
+        {% endif %}
+
+        <footer>Live weather data provided by OpenWeatherMap.</footer>
+    </main>
+</body>
+</html>

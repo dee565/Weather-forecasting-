@@ -1,0 +1,179 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #dceeff, #f4f7ff);
+    color: #183153;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+}
+
+.container {
+    width: 100%;
+    max-width: 650px;
+    background: white;
+    border-radius: 22px;
+    padding: 36px;
+    box-shadow: 0 14px 40px rgba(27, 66, 112, 0.12);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.eyebrow {
+    color: #2878c8;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+h1 {
+    margin: 10px 0;
+    font-size: 30px;
+}
+
+.subtitle, footer, .feels {
+    color: #6b7c93;
+}
+
+.search-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 9px;
+}
+
+.search-row {
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    flex: 1;
+    min-width: 0;
+    padding: 14px;
+    border: 1px solid #cbd8e8;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+button {
+    border: 0;
+    border-radius: 10px;
+    padding: 0 22px;
+    background: #2878c8;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #195fa5;
+}
+
+.weather-card {
+    margin-top: 25px;
+    padding: 25px;
+    border-radius: 17px;
+    background: #edf6ff;
+}
+
+.location h2 {
+    margin: 0 0 5px;
+}
+
+.location p {
+    margin: 0;
+    color: #62758c;
+}
+
+.temperature {
+    display: flex;
+    align-items: center;
+    margin: 8px 0 0;
+}
+
+.temperature img {
+    width: 90px;
+    height: 90px;
+}
+
+.temperature strong {
+    font-size: 48px;
+}
+
+.feels {
+    margin: 0 0 20px;
+}
+
+.details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.detail {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.detail span, .detail strong {
+    display: block;
+}
+
+.detail span {
+    color: #6b7c93;
+    margin-bottom: 7px;
+}
+
+.detail strong {
+    font-size: 20px;
+}
+
+.message {
+    margin-top: 18px;
+    padding: 13px;
+    border-radius: 10px;
+}
+
+.error {
+    background: #fff0f0;
+    color: #a32626;
+}
+
+footer {
+    text-align: center;
+    margin-top: 28px;
+    font-size: 13px;
+}
+
+@media (max-width: 520px) {
+    .container {
+        padding: 24px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .search-row {
+        flex-direction: column;
+    }
+
+    button {
+        padding: 14px;
+    }
+
+    .temperature strong {
+        font-size: 40px;
+    }
+}
